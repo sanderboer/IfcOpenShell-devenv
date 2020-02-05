@@ -1,2 +1,2 @@
 # IfcOpenShell-devenv
-A couple of build, debug and editor scripts to get up and running with ifcopenshell dev.
+A couple of build, debug and editor scripts to get up and running with ifcopenshell dev on linux and emacs.

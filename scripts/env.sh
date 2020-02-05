@@ -11,10 +11,6 @@ BUILD_TYPE="Debug"
 # don't want to mess with .dir-locals.el too much to get uname
 BUILD_DIR="${ROOT_DIR}/build-${UNAME}"
 TEST_DIR="${BUILD_DIR}/testing"
-if [ ! -d "${TEST_DIR}" ]; then
-    echo "no build dir, creating.."
-    mkdir -p ${TEST_DIR};
-fi
 
 # ordered to size:
 TEST_FILE=${ROOT_DIR}/testfiles/743--segfault-on-geometry.ifc

@@ -105,7 +105,7 @@
 		     ((or (string-equal uname "MINGW64_NT-10.0")(string-equal system-type "gnu/linux") )
 		      (progn
 			(message "Linux/MSYS2")
-			(setq sander-makescript (concat sndr-project-root "scipts/build.sh"))
+			(setq sander-makescript (concat sndr-project-root "scripts/build.sh"))
 			(setq sander-runscript (concat sndr-project-root "scripts/run.sh"))
 			(setq sander-debugscript (concat sndr-project-root "scripts/debug.sh"))
 			(setq sndr-project-build-debug-dir (concat sndr-project-root "build-"))

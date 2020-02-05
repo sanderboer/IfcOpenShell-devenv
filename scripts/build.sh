@@ -17,7 +17,7 @@ echo "BUILD_DIR: ${BUILD_DIR}"
 
 if [ ! -d "${BUILD_DIR}" ]; then
     echo "no cmake build dir present, regenerating..."
-    source $DIR/scripts/cmake-init.sh;
+    $DIR/cmake-init.sh;
 fi
 
 pushd ${BUILD_DIR}
