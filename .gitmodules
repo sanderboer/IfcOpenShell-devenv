@@ -1,0 +1,3 @@
+[submodule "IfcOpenShell"]
+	path = IfcOpenShell
+	url = git@github.com:sanderboer/IfcOpenShell.git
