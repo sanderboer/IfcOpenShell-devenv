@@ -706,53 +706,53 @@ Code taken from `hack-dir-local-variables'."
 ;; (use-package cedet :ensure t :config (progn (global-ede-mode 1)))
 ;; (use-package ecb :ensure t :config(progn (require 'ecb) ) )
 
-(defun sndr-cpp-flycheck ()
-  (interactive)
-  ;;(use-package cmake-ide :ensure t  )
-  (use-package flycheck :ensure t
-    :config(progn
-             (setq flycheck-disabled-checkers '(c/c++-clang))
-             (setq flycheck-disabled-checkers '(c/c++-gcc))
-             (flycheck-mode)
-             )
-    )
-  ;; MODE setup
-  ;; (cmake-ide-setup)
-  (use-package flycheck-clang-analyzer
-  :ensure t
-  :after flycheck
-  :config (flycheck-clang-analyzer-setup))
-   )
+;; (defun sndr-cpp-flycheck ()
+;;   (interactive)
+;;   ;;(use-package cmake-ide :ensure t  )
+;;   (use-package flycheck :ensure t
+;;     :config(progn
+;;              (setq flycheck-disabled-checkers '(c/c++-clang))
+;;              (setq flycheck-disabled-checkers '(c/c++-gcc))
+;;              (flycheck-mode)
+;;              )
+;;     )
+;;   ;; MODE setup
+;;   ;; (cmake-ide-setup)
+;;   (use-package flycheck-clang-analyzer
+;;   :ensure t
+;;   :after flycheck
+;;   :config (flycheck-clang-analyzer-setup))
+;;    )
 
-(defun sndr-cpp-irony ()
-  (interactive)
-  ;; irony
-  (use-package irony
-    :ensure t
-    :config (progn
-              ;; If irony server was never installed, install it.
-              (unless (irony--find-server-executable)
-                (call-interactively #'irony-install-server))
-              (add-hook 'c++-mode-hook 'irony-mode)
-              (add-hook 'c-mode-hook 'irony-mode)
-              ;; (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang irony-cdb-clang-complete))
-              (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
-  (use-package company-irony
-    :ensure t
-    :config (progn
-              (eval-after-load 'company
-                '(add-to-list 'company-backends 'company-irony))))
-  ;; I use irony with flycheck to get real-time syntax checking.
-  (use-package flycheck-irony
-    :ensure t
-    :config (progn
-              (eval-after-load 'flycheck
-                '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))))
-  ;; Eldoc shows argument list of the function you are currently writing in the echo area.
-  (use-package irony-eldoc
-    :ensure t
-    :config (progn
-              (add-hook 'irony-mode-hook #'irony-eldoc))))
+;; (defun sndr-cpp-irony ()
+;;   (interactive)
+;;   ;; irony
+;;   (use-package irony
+;;     :ensure t
+;;     :config (progn
+;;               ;; If irony server was never installed, install it.
+;;               (unless (irony--find-server-executable)
+;;                 (call-interactively #'irony-install-server))
+;;               (add-hook 'c++-mode-hook 'irony-mode)
+;;               (add-hook 'c-mode-hook 'irony-mode)
+;;               ;; (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang irony-cdb-clang-complete))
+;;               (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)))
+;;   (use-package company-irony
+;;     :ensure t
+;;     :config (progn
+;;               (eval-after-load 'company
+;;                 '(add-to-list 'company-backends 'company-irony))))
+;;   ;; I use irony with flycheck to get real-time syntax checking.
+;;   (use-package flycheck-irony
+;;     :ensure t
+;;     :config (progn
+;;               (eval-after-load 'flycheck
+;;                 '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))))
+;;   ;; Eldoc shows argument list of the function you are currently writing in the echo area.
+;;   (use-package irony-eldoc
+;;     :ensure t
+;;     :config (progn
+;;              (add-hook 'irony-mode-hook #'irony-eldoc))))
 
 (defun sndr-cpp-projectile ()
   (interactive)
@@ -860,7 +860,8 @@ Code taken from `hack-dir-local-variables'."
     (sndr-cpp-win)
     (if (string-equal uname "MINGW64_NT-10.0")
         (progn
-          (sndr-cpp-irony)))));; end if
+          ;;(sndr-cpp-irony)
+	  ))));; end if
 
 (use-package powerline
   :ensure t

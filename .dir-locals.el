@@ -110,10 +110,10 @@
 			(setq sander-debugscript (concat sndr-project-root "scripts/debug.sh"))
 			(setq sndr-project-build-debug-dir (concat sndr-project-root "build-"))
 			(setq sndr-project-build-debug-dir (concat sndr-project-build-debug-dir uname))
-			(irony-cdb-json-add-compile-commands-path
-			 (concat sndr-project-root "IfcOpenShell")
-			 (concat sndr-project-build-debug-dir "/compile_commands.json")
-			 )
+			;; (irony-cdb-json-add-compile-commands-path
+			;;  (concat sndr-project-root "IfcOpenShell")
+			;;  (concat sndr-project-build-debug-dir "/compile_commands.json")
+			;;  )
 			(setq cmake-ide-build-dir sndr-project-build-debug-dir)
 			(setq cmake-ide-project-dir (concat sndr-project-root "IfcOpenShell/cmake"))
 			(setq tags-table-list (list
