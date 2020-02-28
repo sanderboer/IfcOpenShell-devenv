@@ -131,7 +131,7 @@
 							(setq testfile
 							      (concat
 							       sndr-project-root
-							       "testfiles/743--segfault-on-geometry.ifc" ))
+							       "testfiles/768--extremacurve-segfault.ifc" ))
 							(gdb
 							 (concat "gdb -i=mi -cd " sndr-project-build-debug-dir " --args " exe " -y " testfile " test.obj")
 							 )
