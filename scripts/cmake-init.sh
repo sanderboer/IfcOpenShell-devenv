@@ -6,6 +6,8 @@ NO_WARNINGS="-Wno-overloaded-virtual -Wno-ignored-qualifiers"
 
 CMAKE_SETTINGS="-DCMAKE_EXPORT_COMPILE_COMMANDS=ON "
 CMAKE_SETTINGS+="-Wno-dev "
+CMAKE_SETTINGS+="-DGLTF_SUPPORT=ON "
+CMAKE_SETTINGS+="-Djson_hpp=/usr/include/nlohmann/json.hpp "
 CMAKE_SETTINGS+="-DOCC_INCLUDE_DIR=/usr/include/opencascade "
 CMAKE_SETTINGS+="-DOCC_LIBRARY_DIR=/usr/lib "
 CMAKE_SETTINGS+="-DBUILD_EXAMPLES=OFF "

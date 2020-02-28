@@ -14,6 +14,8 @@ TEST_DIR="${BUILD_DIR}/testing"
 
 # ordered to size:
 TEST_FILE=${ROOT_DIR}/testfiles/743--segfault-on-geometry.ifc
+TEST_FILE=${ROOT_DIR}/testfiles/768--extremacurve-segfault.ifc
+# TEST_FILE="/Projects/ActiveProjects/160-ariba/10.0-wezelstraat/3.2-freecad/wezelstraat2.ifc"
 # TEST_FILE=${ROOT_DIR}/3.0-testfiles/ifc2x3/IfcIShapeProfileDef.ifc
 # TEST_FILE=${ROOT_DIR}/3.0-testfiles/ifc2x3/IfcTrapeziumProfileDef.ifc
 # TEST_FILE=${ROOT_DIR}/3.0-testfiles/ifc2x3/IfcRectangleProfileDef.ifc
