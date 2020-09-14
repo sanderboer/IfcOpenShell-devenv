@@ -1,6 +1,6 @@
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
-;;  removed (make-local-variable 'my-project-path) 
+;;  removed (make-local-variable 'my-project-path)
 
 ;;((nil . ((eval . (progn BODY)))))
 ((nil . ( (eval . (progn
@@ -43,14 +43,14 @@
 			(browse-url myurl)
 			)
 		      )
-		   (defun find-this-on-boost () 
+		   (defun find-this-on-boost ()
 		      "Find this thing on point in boost docs."
 		      (interactive)
 		      (let (myurl)
 			(setq myurl (concat "https://cse.google.com/cse?cx=011577717147771266991:jigzgqluebe&q=" (thing-at-point 'symbol)))
 			(browse-url myurl)
 			)
-		      ) 
+		      )
 		    (defun google-this-on-site (site)
 		      "Find this thing on point on occt documents via google."
 		      (interactive)
@@ -68,14 +68,14 @@
 		      (interactive)
 		      (browse-url "http://www.buildingsmart-tech.org/ifc/IFC4/final/html/")
 		      )
-		    
-		    (global-unset-key (kbd "M-g"))		    
-		    (global-set-key (kbd "M-g c") 'find-this-on-cpp-reference)		    
-		    (global-set-key (kbd "M-g b") 'find-this-on-boost)		    
-		    (global-set-key (kbd "M-g o") 'google-occt-function)		    
-		    (global-set-key (kbd "M-g i") 'find-this-on-ifcowl)		    
+
+		    (global-unset-key (kbd "M-g"))
+		    (global-set-key (kbd "M-g c") 'find-this-on-cpp-reference)
+		    (global-set-key (kbd "M-g b") 'find-this-on-boost)
+		    (global-set-key (kbd "M-g o") 'google-occt-function)
+		    (global-set-key (kbd "M-g i") 'find-this-on-ifcowl)
 		    (global-set-key (kbd "M-g B") 'just-open-building-smart-ifc4)
-					; Microsoft Windows		    
+					; Microsoft Windows
 		    (cond
 		     ((string-equal system-type "windows-nt")
 		      (progn
@@ -87,7 +87,7 @@
 			(setq tags-table-list (list
 					       (expand-file-name (concat sndr-project-root ".TAGS-win") )
 					       ) )
-			
+
 			(define-key global-map "\eT" '(lambda()
 							(interactive)
 							(compile (concat sndr-project-root "0.3-win/gentags.bat"))
@@ -110,16 +110,16 @@
 			(setq sander-debugscript (concat sndr-project-root "scripts/debug.sh"))
 			(setq sndr-project-build-debug-dir (concat sndr-project-root "build-"))
 			(setq sndr-project-build-debug-dir (concat sndr-project-build-debug-dir uname))
-			(irony-cdb-json-add-compile-commands-path
-			 (concat sndr-project-root "IfcOpenShell")
-			 (concat sndr-project-build-debug-dir "/compile_commands.json")
-			 )
-			(setq cmake-ide-build-dir sndr-project-build-debug-dir)
-			(setq cmake-ide-project-dir (concat sndr-project-root "IfcOpenShell/cmake"))
+		;	(irony-cdb-json-add-compile-commands-path
+		;	 (concat sndr-project-root "IfcOpenShell")
+		;	 (concat sndr-project-build-debug-dir "/compile_commands.json")
+		;	 )
+	;		(setq cmake-ide-build-dir sndr-project-build-debug-dir)
+	;		(setq cmake-ide-project-dir (concat sndr-project-root "IfcOpenShell/cmake"))
 			(setq tags-table-list (list
 					       (expand-file-name (concat sndr-project-root ".TAGS-nix") )
 					       ) )
-			
+
 			(define-key global-map "\eT" '(lambda()
 							(interactive)
 							(compile (concat sndr-project-root "scripts/gentags.sh"))
@@ -131,7 +131,7 @@
 							(setq testfile
 							      (concat
 							       sndr-project-root
-							       "testfiles/743--segfault-on-geometry.ifc" ))
+							       "testfiles/796--wall--no-geometry.ifc" ))
 							(gdb
 							 (concat "gdb -i=mi -cd " sndr-project-build-debug-dir " --args " exe " -y " testfile " test.obj")
 							 )
